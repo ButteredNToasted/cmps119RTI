@@ -1,5 +1,16 @@
+######################################################################
+# main.py
 # This is the project file we are going to send CHI
 # Only put non-experimentative code in here that we plan on turning in
+######################################################################
+
+import PhotoScan
+
+# compatibility check
+compatible_major_version = "1.4"
+found_major_version = ".".join(PhotoScan.app.version.split('.')[:2])
+if found_major_version != compatible_major_version:
+	raise Exception("Incompatible PhotoScan version: {} != {}".format(found_major_version, compatible_major_version))
 
 # select region to mask
 
