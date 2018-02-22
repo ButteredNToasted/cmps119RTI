@@ -5,9 +5,11 @@ chunk = doc.chunk
 region = chunk.region
 T = chunk.transform.matrix
 
+# initializing vector with coordinates
 m = PhotoScan.Vector([10E+10, 10E+10, 10E+10])
 M = -m
 
+# calculate the bounds based on "valid" points
 for point in chunk.point_cloud.points:
 	if not point.valid:
 		continue
@@ -21,9 +23,11 @@ for point in chunk.point_cloud.points:
 center = (M + m) / 2
 size = M - m
 
+# resize vector
 region.center = T.inv().mulp(chunk.crs.unproject(center))
 region.size = size * (1 / T.scale())
 
+# 3d model creation
 v_t = T * PhotoScan.Vector( [0,0,0,1] )
 v_t.size = 3
 R = chunk.crs.localframe(v_t) * T
