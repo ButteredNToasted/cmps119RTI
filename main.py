@@ -10,7 +10,7 @@ import PhotoScan
 compatible_major_version = "1.4"
 found_major_version = ".".join(PhotoScan.app.version.split('.')[:2])
 if found_major_version != compatible_major_version:
-	raise Exception("Incompatible PhotoScan version: {} != {}".format(found_major_version, compatible_major_version))
+	print("PhotoScan version 1.4 is reccomended")
 
 # select region to mask
 
