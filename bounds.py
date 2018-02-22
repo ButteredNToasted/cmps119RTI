@@ -35,4 +35,3 @@ region.rot = R.rotation().t()
 
 chunk.region = region
 print("Script finished.")
-
