@@ -1,0 +1,16 @@
+Toolbar image, arrow with image, 8th one from left
+	resize region
+workflow
+	build dense cloud
+	build mesh, click okay
+file
+	import masks, method:from model
+		operation:? replacement, ask tom
+		all cameras
+
+tools
+	tie points, build points cloud
+reference pane
+	optimize cameras
+run script
+	error: "missing uv coordinates"
