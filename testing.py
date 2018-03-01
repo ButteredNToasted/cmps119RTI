@@ -115,7 +115,8 @@ def get_shape_inf():
 	#build mesh
 	chunk.buildModel(surface = PhotoScan.Arbitrary, interpolation = PhotoScan.EnabledInterpolation)
 
-	chunk.importMasks(path = '', source = MaskSourceModel, operation = Photoscan.MaskOperationReplacement, tolerance = 10, cameras = chunk.cameras)
+	print("Importing masks")
+	chunk.importMasks(path = '', source = PhotoScan.MaskSourceModel, operation = PhotoScan.MaskOperationReplacement, tolerance = 10, cameras = chunk.cameras)
 	#build texture
 #	chunk.buildTexture(blending = PhotoScan.MosaicBlending, size = 4096)
 	print("Script finished!")
